@@ -5,7 +5,7 @@ const { app } = require("../app");
 const { loadLaunches, deleteLaunches } = require("../model/launch.model");
 const { testConnectMongo, disconnectMongo } = require("../util/mongo");
 
-describe("Launch API", () => {
+describe("Connect to MongoDB", () => {
   beforeAll(async () => {
     await testConnectMongo();
   });
