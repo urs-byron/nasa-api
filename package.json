@@ -23,7 +23,7 @@
     "//": "TEST",
     "test-client": "npm run test --prefix client",
     "test-server": "npm run test --prefix server",
-    "test": "npm run test-client | npm run test-server"
+    "test": "npm run test-client && npm run test-server"
   },
   "keywords": [],
   "author": "",
