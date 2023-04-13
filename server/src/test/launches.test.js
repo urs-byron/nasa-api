@@ -14,7 +14,7 @@ describe("Launch API", () => {
     await deleteLaunches();
     await loadLaunches();
     await disconnectMongo();
-  }, 20000);
+  }, 30000);
 
   describe("Test GET /v1/launches", () => {
     test("Response should be 200: JSON", async () => {
