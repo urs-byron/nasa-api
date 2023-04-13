@@ -1,0 +1,31 @@
+{
+  "name": "nasa-proj",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "//": "INSTALL",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "install": "npm run install-server | npm run install-client",
+    "//": "",
+    "//": "CLIENT",
+    "client": "npm run start --prefix client",
+    "build-client": "npm run build --prefix client",
+    "//": "",
+    "//": "SERVER",
+    "server": "npm run start --prefix server",
+    "watch": "  npm run server | npm run client",
+    "//": "",
+    "//": "DEPLOY",
+    "deploy": "npm run server | npm run build-client",
+    "deploy-cluster": "npm run cluster --prefix server | npm run build-client",
+    "//": "",
+    "//": "TEST",
+    "test-client": "npm run test --prefix client",
+    "test-server": "npm run test --prefix server",
+    "test": "npm run test-client | npm run test-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

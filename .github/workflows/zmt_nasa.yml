@@ -1,0 +1,32 @@
+name: zmt-nasa
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    env:
+      CI: true
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        mongodb-version: ["4.4", "6.0"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v18
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Use GH Actions MongoDB
+        uses: supercharge/mongodb-github-action@1.9.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+
+      - run: npm install
+      - run: npm run build-client
+      - run: npm test
