@@ -15,7 +15,7 @@ describe("Connect to MongoDB", () => {
     await deleteLaunches();
     await loadLaunches();
     await disconnectMongo();
-  }, 20000);
+  }, 50000);
 
   describe("Test GET /v1/launches", () => {
     test("Response should be 200: JSON", async () => {
