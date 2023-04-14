@@ -17,10 +17,7 @@ async function connectMongo() {
 
 async function testConnectMongo() {
   try {
-    mongoose.connect(
-      "mongodb+srv://bmlursua:22a00776-a299-4884-9be7-361016d323d4@api-dbs.rjt5vim.mongodb.net/zmt-nasa?retryWrites=true&w=majority",
-      mongo_options
-    );
+    mongoose.connect(process.env.MONGO_URI, mongo_options);
   } catch (err) {
     console.log(err);
   }

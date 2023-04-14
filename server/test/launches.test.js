@@ -1,9 +1,10 @@
 const request = require("supertest");
+require("dotenv").config();
 
-const { app } = require("../app");
+const { app } = require("../src/app");
 
-const { loadLaunches, deleteLaunches } = require("../model/launch.model");
-const { testConnectMongo, disconnectMongo } = require("../util/mongo");
+const { loadLaunches, deleteLaunches } = require("../src/model/launch.model");
+const { testConnectMongo, disconnectMongo } = require("../src/util/mongo");
 
 describe("Connect to MongoDB", () => {
   beforeAll(async () => {
@@ -14,7 +15,7 @@ describe("Connect to MongoDB", () => {
     await deleteLaunches();
     await loadLaunches();
     await disconnectMongo();
-  }, 30000);
+  }, 20000);
 
   describe("Test GET /v1/launches", () => {
     test("Response should be 200: JSON", async () => {

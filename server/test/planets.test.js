@@ -1,8 +1,9 @@
 const request = require("supertest");
+require("dotenv").config();
 
-const { app } = require("../app");
+const { app } = require("../src/app");
 
-const { testConnectMongo, disconnectMongo } = require("../util/mongo");
+const { testConnectMongo, disconnectMongo } = require("../src/util/mongo");
 
 describe("Connect to MongoDB", () => {
   beforeAll(async () => {
