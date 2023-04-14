@@ -12,6 +12,7 @@ describe("Connect to MongoDB", () => {
   });
 
   // With these steps, test data will be wholly dependent on the external APIs of the server
+  // MongoDB Data will be reset every after test
   afterAll(async () => {
     await deleteLaunches();
     await loadLaunches();
