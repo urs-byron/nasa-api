@@ -11,6 +11,7 @@ describe("Connect to MongoDB", () => {
     await testConnectMongo();
   });
 
+  // With these steps, test data will be wholly dependent on the external APIs of the server
   afterAll(async () => {
     await deleteLaunches();
     await loadLaunches();
